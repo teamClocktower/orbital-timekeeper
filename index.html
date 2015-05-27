@@ -10,76 +10,256 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+  <nav class="orange accent-3" role="navigation">
+    <div class="nav-wrapper container left"><a id="logo-container" href="#" class="brand-logo ">Logo</a>
     </div>
+
   </nav>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Starter Template</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
-      <br><br>
 
-    </div>
+  <div class="section">
   </div>
-
+  
 
   <div class="container">
-    <div class="section">
 
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="mdi-image-flash-on"></i></h2>
-            <h5 class="center">Speeds up development</h5>
+  <!-- top url/other stuff -->
+  <!-- add extra rows of input in same row div -->
+    <div class="row">
+      <div class="input-field col m3">
+        <i class="small mdi-action-account-circle prefix"></i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">Name</label>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
+        <i class="small mdi-action-account-circle prefix"></i>
+          <input id="icon_prefix" type="text" class="validate">
+          
+      </div>
+
+      <div class="input-field col m6">
+        <i class="small mdi-editor-format-underline prefix"></i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">Timetable URL</label>
+
+        <i class="small mdi-editor-format-underline prefix"></i>
+          <input id="icon_prefix" type="text" class="validate">
+          
+        
+      </div>
+      <!-- one br for first, two for subsequent... experiment -->
+      <div class="col m3">
+        <br>
+        <div class="switch">
+          <label>
+            Hidden
+            <input type="checkbox">
+              <span class="lever"></span>
+                Visible
+            </label>
         </div>
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="mdi-social-group"></i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="mdi-action-settings"></i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
+        <br><br>
+        <div class="switch">
+          <label>
+            Hidden
+            <input type="checkbox">
+              <span class="lever"></span>
+                Visible
+            </label>
         </div>
       </div>
 
     </div>
-    <br><br>
 
-    <div class="section">
 
+
+
+    <!-- add button -->
+    <div class ="row">
+        <div class="col m3">
+          <a class="btn-floating btn-medium waves-effect waves-light red"><i class="mdi-content-add"></i></a>
+        </div>
+
+        <div class="col m7">
+        </div>
+
+        <div class="col m2">
+        </div>
+
+    </div>
+
+    
+
+
+  <!-- main content -->
+  
+     <div class="row">
+      <div class="col m2">
+      
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active"><i class="mdi-image-filter-drama"></i>Hi!</div>
+      <div class="collapsible-body"><p>Welcome to timekeeper! To compare timetables, simply paste your respective NUSMods timetable URLs into the URL fields above! </p></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+  </ul>
+        
+      </div>
+
+      <div class="col m10">
+        
+
+
+      <table class="striped">
+        <thead>
+          <tr>
+              <th></th>
+              <th>0800</th>
+              <th>0900</th>
+              <th>1000</th>
+              <th>1100</th>
+              <th>1200</th>
+              <th>1300</th>
+              <th>1400</th>
+              <th>1500</th>
+              <th>1600</th>
+              <th>1700</th>
+              <th>1800</th>
+              <th>1900</th>
+              <th>2000</th>
+              <th>2100</th>
+              <th>2200</th>
+              <th>2300</th>
+              <th>0000</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+              <td>Monday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+        </tbody>
+      </table>
+            
+
+
+
+
+
+
+
+
+      </div>
     </div>
   </div>
 
-  <footer class="page-footer orange">
+
+
+
+  <footer class="page-footer orange accent-3">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
