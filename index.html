@@ -28,7 +28,7 @@
       <div class="input-field col m3">
         <i class="small mdi-action-account-circle prefix"></i>
           <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Name</label>
+          <label for="icon_prefix"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Enter name">Name</a></label>
 
         <i class="small mdi-action-account-circle prefix"></i>
           <input id="icon_prefix" type="text" class="validate">
@@ -38,7 +38,7 @@
       <div class="input-field col m6">
         <i class="small mdi-editor-format-underline prefix"></i>
           <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Timetable URL</label>
+          <label for="icon_prefix"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Input NUSmods timetable URL">Timetable URL</a></label>
 
         <i class="small mdi-editor-format-underline prefix"></i>
           <input id="icon_prefix" type="text" class="validate">
@@ -58,15 +58,15 @@
         </div>
 
         <br><br>
-        <div class="switch">
+        <a class="switch">
           <label>
             Hidden
-            <input type="checkbox">
+            <input type="checkbox" onclick="Materialize.toast('Hidden/Visible toggled', 1000, 'rounded')">
               <span class="lever"></span>
                 Visible
             </label>
-        </div>
-      </div>
+        
+      </div></a>
 
     </div>
 
