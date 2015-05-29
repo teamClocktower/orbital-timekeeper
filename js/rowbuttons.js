@@ -1,6 +1,7 @@
 $(function(){
 	$('#addrow').click(function(){
 		$('#rowcontainer').append(
+			'<div class="row"><div class="input-field col m3"><i class="small mdi-action-account-circle prefix"></i>'
           +'<input id="icon_prefix" type="text" class="validate"><label for="icon_prefix"><a class="tooltipped"'
           +'data-position="bottom" data-delay="50" data-tooltip="Enter name">Name</a></label></div><div class="input-field col m6">'
           +'<i class="small mdi-editor-format-underline prefix"></i><input id="icon_prefix" type="text" class="validate">'
@@ -11,7 +12,6 @@ $(function(){
 
 	});
 });
-
 
 
 
