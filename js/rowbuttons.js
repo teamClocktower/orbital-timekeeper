@@ -11,6 +11,14 @@ $(function(){
           +'Visible</label></div></div></div>');
 
 	});
+
+
+	$('#removerow').click(function(){
+		$('#rowcontainer').find('.row:last').remove();
+
+	});
+
+
 });
 
 
