@@ -24,11 +24,11 @@
 
   <!-- top url/other stuff -->
   <!-- add extra rows of input in same row div -->
-    <div class="row">
+    <div id='row1' class="row">
       <div class="input-field col m3">
         <i class="small mdi-action-account-circle prefix"></i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Enter name">Name</a></label>
+          <input id="nameinput1" type="text" class="validate">
+          <label for="nameinput1"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Enter name">Name</a></label>
 
      
           
@@ -36,16 +36,16 @@
 
       <div class="input-field col m6">
         <i class="small mdi-editor-format-underline prefix"></i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Input NUSmods timetable URL">Timetable URL</a></label>
+          <input id="urlinput1" type="text" class="validate">
+          <label for="urlinput1"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Input NUSmods timetable URL">Timetable URL</a></label>
 
        
         
       </div>
-      <!-- one br for first, two for subsequent... experiment -->
+      
       <div class="col m3">
         <br>
-        <div class="switch">
+        <div id='switch1' class="switch">
           <label>
             Hidden
             <input type="checkbox" onclick="Materialize.toast('Hidden/Visible toggled', 1000, 'rounded')">
