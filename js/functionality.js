@@ -1,6 +1,21 @@
 var numrow = 1;
 
+(function( $ ){
+   $.fn.rowcheck = function(row) {
+   		$('#urlinput'+row).keyup(function(){
+   			var url = $(this).val();
+   			var check = url.split('/').pop();
+   			console.log(check);
+   			console.log("PASS");
+   		});
+   }; 
+})(jQuery);
+
+
+
 $(function(){
+	$('#urlinput'+numrow).rowcheck(numrow);
+
 	$('#addrow').click(function(){
 		numrow += 1;
 		
@@ -14,6 +29,9 @@ $(function(){
           +'Hidden<input type="checkbox" onclick="Materialize.toast("Hidden/Visible toggled", 1000, "rounded")"><span class="lever"></span>'
           +'Visible</label></div></div></div>');
 
+		$('#urlinput'+String(numrow)+'').rowcheck(numrow);
+
+
 	});
 
 
@@ -25,13 +43,17 @@ $(function(){
 		else{
 			numrow -= 1;
 			$('#rowcontainer').find('.row:last').remove();
+			
 		}
 		
-
 	});
 
 
+	
+
+
 });
+
 
 
 
