@@ -63,14 +63,12 @@
 
     <!-- add button -->
     <div class ="row">
-        <div class="col m4">
+        <div class="col m3">
           <a class="btn-floating btn-medium waves-effect waves-light red"><i id='addrow' class="mdi-content-add"></i></a>
           <a class="btn-floating btn-medium waves-effect waves-light grey"><i id='removerow' class="mdi-action-highlight-remove"></i></a>
-          <a id='refresh' class="waves-effect waves-light btn indigo darken-1"><i  class="mdi-navigation-refresh left"></i>Refresh timetable</a>
         </div>
 
-        <div class="col m6">
-
+        <div class="col m7">
         </div>
 
         <div class="col m2">
@@ -84,233 +82,153 @@
   <!-- main content -->
   
      <div class="row">
+      <div class="col m2">
       
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active"><i class="mdi-image-filter-drama"></i>Hi!</div>
+      <div class="collapsible-body"><p>Welcome to timekeeper! To compare timetables, simply paste your respective NUSMods timetable URLs into the URL fields above! </p></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+  </ul>
+        
+      </div>
 
-      <div class="col m12">
+      <div class="col m10">
         
 
 
-      <table id='timetable'class="striped">
-        <thead style="font-size:x-small;">
-          <tr >
+      <table class="striped">
+        <thead>
+          <tr>
               <th></th>
               <th>0800</th>
-              <th>0830</th>
               <th>0900</th>
-              <th>0930</th>
               <th>1000</th>
-              <th>1030</th>
               <th>1100</th>
-              <th>1130</th>
               <th>1200</th>
-              <th>1230</th>
               <th>1300</th>
-              <th>1330</th>
               <th>1400</th>
-              <th>1430</th>
               <th>1500</th>
-              <th>1530</th>
               <th>1600</th>
-              <th>1630</th>
               <th>1700</th>
-              <th>1730</th>
               <th>1800</th>
-              <th>1830</th>
               <th>1900</th>
-              <th>1930</th>
               <th>2000</th>
-              <th>2030</th>
               <th>2100</th>
-              <th>2130</th>
               <th>2200</th>
-              <th>2230</th>
               <th>2300</th>
-              <th>2330</th>
               <th>0000</th>
           </tr>
         </thead>
 
-        <tbody style="font-size:small;">
-          <tr id='mon'>
-              <td style="font-size:medium;">Monday</td>
-              <td class='h08 m00'></td>
-              <td class='h08 m30'></td>
-              <td class='h09 m00'></td>
-              <td class='h09 m30'></td>
-              <td class='h10 m00'></td>
-              <td class='h10 m30'></td>
-              <td class='h11 m00'></td>
-              <td class='h11 m30'></td>
-              <td class='h12 m00'></td>
-              <td class='h12 m30'></td>
-              <td class='h13 m00'></td>
-              <td class='h13 m30'></td>
-              <td class='h14 m00'></td>
-              <td class='h14 m30'></td>
-              <td class='h15 m00'></td>
-              <td class='h15 m30'></td>
-              <td class='h16 m00'></td>
-              <td class='h16 m30'></td>
-              <td class='h17 m00'></td>
-              <td class='h17 m30'></td>
-              <td class='h18 m00'></td>
-              <td class='h18 m30'></td>
-              <td class='h19 m00'></td>
-              <td class='h19 m30'></td>
-              <td class='h20 m00'></td>
-              <td class='h20 m30'></td>
-              <td class='h21 m00'></td>
-              <td class='h21 m30'></td>
-              <td class='h22 m00'></td>
-              <td class='h22 m30'></td>
-              <td class='h23 m00'></td>
-              <td class='h23 m30'></td>
-              <td class='h24 m00'></td>
-              
+        <tbody>
+          <tr>
+              <td>Monday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
           </tr>
-          <tr id='tue'>
-            <td style="font-size:medium;">Tuesday</td>
-              <td class='h08 m00'></td>
-              <td class='h08 m30'></td>
-              <td class='h09 m00'></td>
-              <td class='h09 m30'></td>
-              <td class='h10 m00'></td>
-              <td class='h10 m30'></td>
-              <td class='h11 m00'></td>
-              <td class='h11 m30'></td>
-              <td class='h12 m00'></td>
-              <td class='h12 m30'></td>
-              <td class='h13 m00'></td>
-              <td class='h13 m30'></td>
-              <td class='h14 m00'></td>
-              <td class='h14 m30'></td>
-              <td class='h15 m00'></td>
-              <td class='h15 m30'></td>
-              <td class='h16 m00'></td>
-              <td class='h16 m30'></td>
-              <td class='h17 m00'></td>
-              <td class='h17 m30'></td>
-              <td class='h18 m00'></td>
-              <td class='h18 m30'></td>
-              <td class='h19 m00'></td>
-              <td class='h19 m30'></td>
-              <td class='h20 m00'></td>
-              <td class='h20 m30'></td>
-              <td class='h21 m00'></td>
-              <td class='h21 m30'></td>
-              <td class='h22 m00'></td>
-              <td class='h22 m30'></td>
-              <td class='h23 m00'></td>
-              <td class='h23 m30'></td>
-              <td class='h24 m00'></td>
+          <tr>
+            <td>Tuesday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
           </tr>
-          <tr id='wed'>
-            <td style="font-size:medium;">Wednesday</td>
-              <td class='h08 m00'></td>
-              <td class='h08 m30'></td>
-              <td class='h09 m00'></td>
-              <td class='h09 m30'></td>
-              <td class='h10 m00'></td>
-              <td class='h10 m30'></td>
-              <td class='h11 m00'></td>
-              <td class='h11 m30'></td>
-              <td class='h12 m00'></td>
-              <td class='h12 m30'></td>
-              <td class='h13 m00'></td>
-              <td class='h13 m30'></td>
-              <td class='h14 m00'></td>
-              <td class='h14 m30'></td>
-              <td class='h15 m00'></td>
-              <td class='h15 m30'></td>
-              <td class='h16 m00'></td>
-              <td class='h16 m30'></td>
-              <td class='h17 m00'></td>
-              <td class='h17 m30'></td>
-              <td class='h18 m00'></td>
-              <td class='h18 m30'></td>
-              <td class='h19 m00'></td>
-              <td class='h19 m30'></td>
-              <td class='h20 m00'></td>
-              <td class='h20 m30'></td>
-              <td class='h21 m00'></td>
-              <td class='h21 m30'></td>
-              <td class='h22 m00'></td>
-              <td class='h22 m30'></td>
-              <td class='h23 m00'></td>
-              <td class='h23 m30'></td>
-              <td class='h24 m00'></td>
+          <tr>
+            <td>Wednesday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
           </tr>
-          <tr id='thu'>
-            <td style="font-size:medium;">Thursday</td>
-              <td class='h08 m00'></td>
-              <td class='h08 m30'></td>
-              <td class='h09 m00'></td>
-              <td class='h09 m30'></td>
-              <td class='h10 m00'></td>
-              <td class='h10 m30'></td>
-              <td class='h11 m00'></td>
-              <td class='h11 m30'></td>
-              <td class='h12 m00'></td>
-              <td class='h12 m30'></td>
-              <td class='h13 m00'></td>
-              <td class='h13 m30'></td>
-              <td class='h14 m00'></td>
-              <td class='h14 m30'></td>
-              <td class='h15 m00'></td>
-              <td class='h15 m30'></td>
-              <td class='h16 m00'></td>
-              <td class='h16 m30'></td>
-              <td class='h17 m00'></td>
-              <td class='h17 m30'></td>
-              <td class='h18 m00'></td>
-              <td class='h18 m30'></td>
-              <td class='h19 m00'></td>
-              <td class='h19 m30'></td>
-              <td class='h20 m00'></td>
-              <td class='h20 m30'></td>
-              <td class='h21 m00'></td>
-              <td class='h21 m30'></td>
-              <td class='h22 m00'></td>
-              <td class='h22 m30'></td>
-              <td class='h23 m00'></td>
-              <td class='h23 m30'></td>
-              <td class='h24 m00'></td>
+          <tr>
+            <td>Thursday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
           </tr>
-          <tr id='fri'>
-            <td style="font-size:medium;">Friday</td>
-              <td class='h08 m00'></td>
-              <td class='h08 m30'></td>
-              <td class='h09 m00'></td>
-              <td class='h09 m30'></td>
-              <td class='h10 m00'></td>
-              <td class='h10 m30'></td>
-              <td class='h11 m00'></td>
-              <td class='h11 m30'></td>
-              <td class='h12 m00'></td>
-              <td class='h12 m30'></td>
-              <td class='h13 m00'></td>
-              <td class='h13 m30'></td>
-              <td class='h14 m00'></td>
-              <td class='h14 m30'></td>
-              <td class='h15 m00'></td>
-              <td class='h15 m30'></td>
-              <td class='h16 m00'></td>
-              <td class='h16 m30'></td>
-              <td class='h17 m00'></td>
-              <td class='h17 m30'></td>
-              <td class='h18 m00'></td>
-              <td class='h18 m30'></td>
-              <td class='h19 m00'></td>
-              <td class='h19 m30'></td>
-              <td class='h20 m00'></td>
-              <td class='h20 m30'></td>
-              <td class='h21 m00'></td>
-              <td class='h21 m30'></td>
-              <td class='h22 m00'></td>
-              <td class='h22 m30'></td>
-              <td class='h23 m00'></td>
-              <td class='h23 m30'></td>
-              <td class='h24 m00'></td>
+          <tr>
+            <td>Friday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
           </tr>
         </tbody>
       </table>
