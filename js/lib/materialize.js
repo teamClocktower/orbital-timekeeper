@@ -2164,7 +2164,7 @@ $(document).ready(function(){
 	 * @param {number} right
 	 * @param {number} bottom
 	 * @param {number} left
-	 * @return {jQuery}		A collection of elements
+	 * @return {jQuery}		A collections of elements
 	 */
 	function findElements(top, right, bottom, left) {
 		var hits = $();
@@ -2293,7 +2293,7 @@ $(document).ready(function(){
 
 	/**
 	 * Enables ScrollSpy using a selector
-	 * @param {jQuery|string} selector  The elements collection, or a selector
+	 * @param {jQuery|string} selector  The elements collections, or a selector
 	 * @param {Object=} options	Optional.
         throttle : number -> scrollspy throttling. Default: 100 ms
         offsetTop : number -> offset from top. Default: 0
@@ -2400,7 +2400,7 @@ $(document).ready(function(){
 	};
 
 	/**
-	 * Enables ScrollSpy on a collection of elements
+	 * Enables ScrollSpy on a collections of elements
 	 * e.g. $('.scrollSpy').scrollSpy()
 	 * @param {Object=} options	Optional.
 											throttle : number -> scrollspy throttling. Default: 100 ms
@@ -3907,10 +3907,10 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
                             thingName = '_' + thingName
                         }
 
-                        // Make sure the thing methods collection exists.
+                        // Make sure the thing methods collections exists.
                         STATE.methods[ thingName ] = STATE.methods[ thingName ] || []
 
-                        // Add the method to the relative method collection.
+                        // Add the method to the relative method collections.
                         STATE.methods[ thingName ].push( thingMethod )
                     }
                 }
@@ -5174,7 +5174,7 @@ DatePicker.prototype.parse = function( type, value, options ) {
  */
 DatePicker.prototype.formats = (function() {
 
-    // Return the length of the first word in a collection.
+    // Return the length of the first word in a collections.
     function getWordLengthFromCollection( string, collection, dateObject ) {
 
         // Grab the first word from the string.
@@ -5237,7 +5237,7 @@ DatePicker.prototype.formats = (function() {
             var collection = this.settings.monthsShort
 
             // If there's a string, get length of the relevant month from the short
-            // months collection. Otherwise return the selected month from that collection.
+            // months collections. Otherwise return the selected month from that collections.
             return string ? getWordLengthFromCollection( string, collection, dateObject ) : collection[ dateObject.month ]
         },
         mmmm: function( string, dateObject ) {
@@ -5245,7 +5245,7 @@ DatePicker.prototype.formats = (function() {
             var collection = this.settings.monthsFull
 
             // If there's a string, get length of the relevant month from the full
-            // months collection. Otherwise return the selected month from that collection.
+            // months collections. Otherwise return the selected month from that collections.
             return string ? getWordLengthFromCollection( string, collection, dateObject ) : collection[ dateObject.month ]
         },
         yy: function( string, dateObject ) {
@@ -5346,7 +5346,7 @@ DatePicker.prototype.flipEnable = function(val) {
 
 
 /**
- * Mark a collection of dates as “disabled”.
+ * Mark a collections of dates as “disabled”.
  */
 DatePicker.prototype.deactivate = function( type, datesToDisable ) {
 
@@ -5385,7 +5385,7 @@ DatePicker.prototype.deactivate = function( type, datesToDisable ) {
                 }
             }
 
-            // If nothing was found, add the validated unit to the collection.
+            // If nothing was found, add the validated unit to the collections.
             if ( !matchFound ) {
                 if (
                     _.isInteger( unitToDisable ) ||
@@ -5399,13 +5399,13 @@ DatePicker.prototype.deactivate = function( type, datesToDisable ) {
         })
     }
 
-    // Return the updated collection.
+    // Return the updated collections.
     return disabledItems
 } //DatePicker.prototype.deactivate
 
 
 /**
- * Mark a collection of dates as “enabled”.
+ * Mark a collections of dates as “enabled”.
  */
 DatePicker.prototype.activate = function( type, datesToEnable ) {
 
@@ -5443,7 +5443,7 @@ DatePicker.prototype.activate = function( type, datesToEnable ) {
 
                 disabledUnit = disabledItems[index]
 
-                // When an exact match is found, remove it from the collection.
+                // When an exact match is found, remove it from the collections.
                 if ( calendar.isDateExact( disabledUnit, unitToEnable ) ) {
                     matchFound = disabledItems[index] = null
                     isExactRange = true
@@ -5484,14 +5484,14 @@ DatePicker.prototype.activate = function( type, datesToEnable ) {
                 }
             }
 
-            // If something is still matched, add it into the collection.
+            // If something is still matched, add it into the collections.
             if ( matchFound ) {
                 disabledItems.push( matchFound )
             }
         })
     }
 
-    // Return the updated collection.
+    // Return the updated collections.
     return disabledItems.filter(function( val ) { return val != null })
 } //DatePicker.prototype.activate
 
@@ -5514,7 +5514,7 @@ DatePicker.prototype.nodes = function( isOpen ) {
         maxLimitObject = calendarItem.max,
 
 
-        // Create the calendar table head using a copy of weekday labels collection.
+        // Create the calendar table head using a copy of weekday labels collections.
         // * We do a copy so we don't mutate the original array.
         tableHead = (function( collection, fullCollection ) {
 
