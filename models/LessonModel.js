@@ -16,9 +16,9 @@ var Lesson = Backbone.Model.extend({
                 var modelObj = this.model[responseElement];
                 var modelData = responseElement;
                 response[responseElement] = new modelObj(modelData, {parse : true});
-            } else (
-                this[responseElement] = response[responseElement]
-            )
+            } else {
+                this[responseElement] = response[responseElement];
+            }
         }
 
         return response;

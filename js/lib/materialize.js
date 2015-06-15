@@ -2203,14 +2203,14 @@ $(document).ready(function(){
 			right = left + jWindow.width(),
 			bottom = top + jWindow.height();
 
-		// determine which elements are in view
+		// determine which elements are in views
 //        + 60 accounts for fixed nav
 		var intersections = findElements(top+offset.top + 200, right+offset.right, bottom+offset.bottom, left+offset.left);
 		$.each(intersections, function(i, element) {
 
 			var lastTick = element.data('scrollSpy:ticks');
 			if (typeof lastTick != 'number') {
-				// entered into view
+				// entered into views
 				element.triggerHandler('scrollSpy:enter');
 			}
 
@@ -2218,17 +2218,17 @@ $(document).ready(function(){
 			element.data('scrollSpy:ticks', ticks);
 		});
 
-		// determine which elements are no longer in view
+		// determine which elements are no longer in views
 		$.each(elementsInView, function(i, element) {
 			var lastTick = element.data('scrollSpy:ticks');
 			if (typeof lastTick == 'number' && lastTick !== ticks) {
-				// exited from view
+				// exited from views
 				element.triggerHandler('scrollSpy:exit');
 				element.data('scrollSpy:ticks', null);
 			}
 		});
 
-		// remember elements in view for next tick
+		// remember elements in views for next tick
 		elementsInView = intersections;
 	}
 
@@ -3656,7 +3656,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
                     }
 
                     // Pass focus to the root element’s jQuery object.
-                    // * Workaround for iOS8 to bring the picker’s root into view.
+                    // * Workaround for iOS8 to bring the picker’s root into views.
                     P.$root[0].focus()
 
                     // Bind the document events.
@@ -4614,7 +4614,7 @@ function DatePicker( picker, settings ) {
         set( 'now' )
 
     // When there’s a value, set the `select`, which in turn
-    // also sets the `highlight` and `view`.
+    // also sets the `highlight` and `views`.
     if ( valueString ) {
         calendar.set( 'select', valueString, { format: formatString })
     }
@@ -4883,8 +4883,8 @@ DatePicker.prototype.navigate = function( type, value, options ) {
             targetDate = +value[2]
         }
 
-        // If we’re navigating months but the view is in a different
-        // month, navigate to the view’s year and month.
+        // If we’re navigating months but the views is in a different
+        // month, navigate to the views’s year and month.
         if ( options && options.nav && viewsetObject && viewsetObject.month !== targetMonth ) {
             targetYear = viewsetObject.year
             targetMonth = viewsetObject.month
@@ -5795,7 +5795,7 @@ return _.node(
                                         targetDate.date,
                                         (function( klasses ) {
 
-                                            // Add the `infocus` or `outfocus` classes based on month in view.
+                                            // Add the `infocus` or `outfocus` classes based on month in views.
                                             klasses.push( viewsetObject.month == targetDate.month ? settings.klass.infocus : settings.klass.outfocus )
 
                                             // Add the `today` class if needed.
