@@ -5,10 +5,7 @@
 
 
 var Lesson = Backbone.Model.extend({
-    model : {
-        startTime : Time,
-        endTime : Time
-    },
+
 
     parse: function(response) {
         for (var responseElement in response){

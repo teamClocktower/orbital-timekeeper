@@ -1,25 +1,31 @@
 'use strict';
-var Storage = Backbone.View.extend({
+var StorageView = Backbone.View.extend({
 
-    el: '#timetable',
+    model: Storage,
+    tagname : "div",
 
-    initialize : function(){
-        this.render();
-    },
-
-    events : {
-        "change storeall" : "storeChange"
-    },
 
     storeChange : function(){
-        for (var i=1;, i<storeall.get('row')+1; i++){
+        storeall.each(function(x){
+            x.set('modstore', x.get('urlstore').split('?')[1].split('&'));
+            var modln = x.get('modstore').length;
+            for (var idx=0;idx<modln;idx++){
+                $.getJson(path+ x.get('yearstore')+'/'+ x.get('semstore')+'/modeules/'+ x.get('modstore')[idx]+ '.json',function(json){
+                    var allmods = json;
+                    x.get('modstore')[idx]
+                });
+            }
 
-        }
+        });
 
     },
-
+    initialize: function() {
+        this.listenTo(this.model, "change", this.storeChange);
+    },
     render : function(){
 
+        this.$el.html(this.model.get('namestore')+ "'s class<br>");
+        return this;
     }
 
 
