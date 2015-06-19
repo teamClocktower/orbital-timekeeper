@@ -1,9 +1,4 @@
 'use strict';
-
-
-
-
-
 var Lesson = Backbone.Model.extend({
 
 

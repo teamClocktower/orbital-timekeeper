@@ -12,40 +12,65 @@ storeall.add(store1);
         $('#urlinput'+row).bind("change", function(){
            var strmdl = storeall.at(row-1);
            var url = $(this).val().split('/');
+            var year = url[4];
             var last = url.pop().split('?');
-            strmdl.set('semstore', last[0]);
+
+            strmdl.set('sem', last[0][3]);
+            var sem = strmdl.get('sem');
             var slots = last[1].split('&');
-            if (strmdl.get('modules') == undefined){
-                strmdl.set('modules', new Modules());
+            if (strmdl.get('modules')==undefined){
+                strmdl.set('modules', new Modules);
             }
             var modules = strmdl.get('modules');
-            _.map(slots, function(slot){
+            // ACC1002X[LEC]=X2
+            _.forEach(slots, function(slot){
 
                 var modid = slot.split('[')[0];
                 var classtype = slot.slice(slot.indexOf('[')+1, slot.indexOf(']')).toLowerCase();
-                var session = slot.split('=').pop().toLowerCase();
+                var session = slot.split('=').pop();
                 if (modules.get(modid)==undefined){
-                    modules.add(new Module({ID : modid}));
+                    modules.add(new Module({id:modid}));
                 }
                 var module = modules.get(modid);
-                if (module.get('lessons')==undefined){
-                    module.set('lessons', new Lessons());
-                }
                 var lessons = module.get('lessons');
                 // check if lesson in lessons
+                var lesson = _.findWhere(lessons,{classNo:session, lessonType:classtype});
+                if (lesson == undefined){
+                    lessons.add(new Lesson({classNo:session, lessonType:classtype}));
 
-
-
+                }
 
             });
-            strmdl.set('urlstore', last);
-            strmdl.set('yearstore', url.pop());
+
+            _.forEach(slots, function(slot){
+                var modid = slot.split('[')[0];
+                $.getJSON(path + year + '/' + sem + '/modules/' + modid + '/timetable.json', function(json){
+                   //json = json.responseJSON; // might add/remove, not sure format of json response
+                   var lessons = modules.get(modid).get('lessons') ;
+
+                    _.forEach(lessons, function(lesson){
+                        _.forEach(json, function(response){
+                            if (lesson.get('classNo') == response.classNo && lesson.get('lessonType') == response.ClassNo.toLoweCase().slice(0,3))_{
+                                lesson.set('weekText', json.WeekText);
+                                lesson.set('dayText', json.DayText);
+                                lesson.set('startTime', new Time({hr:json.StartTime.slice(2),min:json.StartTime.slice(2,4)}));
+                                lesson.set('endime', new Time({hr:json.EndTime.slice(2),min:json.EndTime.slice(2,4)}));
+                                lesson.set('venue', json.Venue);
+                            }
+                            break;
+                        });
+                    });
+
+                });
+
+            });
+
         });
     } ;
 
     $.fn.namescrape = function(row){
         $('#nameinput'+row).bind("change", function(){
-          storeall.at(row-1).set('namestore', $(this).val() );
+          storeall.at(row-1).set('name', $(this).val() );
         });
     };
 
