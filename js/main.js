@@ -2,7 +2,11 @@
 var allrow = 1;
 var path = 'http://api.nusmods.com/';
 var store1 = new Storage();
-var sview = new StorageView({model : store1});
+var sview = new StorageView({el : '#urlinput1', model : store1});
+
+var nview = new Name({el:'#nameinput1', model:store1});
+var uview = new Url({el:'#fortesting', model:store1});
+
 var storeall = new StoreAll;
 storeall.add(store1);
 
@@ -48,24 +52,33 @@ storeall.add(store1);
                    //json = json.responseJSON; // might add/remove, not sure format of json response
                    var lessons = modules.get(modid).get('lessons') ;
 
-                    _.forEach(lessons, function(lesson){
-                        _.forEach(json, function(response){
-                            if (lesson.get('classNo') == response.classNo && lesson.get('lessonType') == response.ClassNo.toLoweCase().slice(0,3))_{
-                                lesson.set('weekText', json.WeekText);
-                                lesson.set('dayText', json.DayText);
-                                lesson.set('startTime', new Time({hr:json.StartTime.slice(2),min:json.StartTime.slice(2,4)}));
-                                lesson.set('endime', new Time({hr:json.EndTime.slice(2),min:json.EndTime.slice(2,4)}));
-                                lesson.set('venue', json.Venue);
-                            }
-                            break;
-                        });
-                    });
+                    for (var i=0; i < lessons.length; i++){
 
+                        _.forEach(json, function(response){
+
+                           // inefficiencies, doesnt break during forEach
+                            if (lessons.at(i).get('classNo') == response.ClassNo && lessons.at(i).get('lessonType') == response.LessonType.toLowerCase().slice(0,3)){
+
+                                lessons.at(i).set('weekText', response.WeekText);
+                                lessons.at(i).set('dayText', response.DayText);
+                                lessons.at(i).set('startTime', new Time({hr:response.StartTime.slice(2),min:response.StartTime.slice(2,4)}));
+                                lessons.at(i).set('endTime', new Time({hr:response.EndTime.slice(2),min:response.EndTime.slice(2,4)}));
+                                lessons.at(i).set('venue', response.Venue);
+
+
+                            }
+
+                        });
+                    }
                 });
+
+
 
             });
 
         });
+
+
     } ;
 
     $.fn.namescrape = function(row){
@@ -95,8 +108,8 @@ $(function() {
             +'Hidden<input type="checkbox" onclick="Materialize.toast("Hidden/Visible toggled", 1000, "rounded")"><span class="lever"></span>'
             +'Visible</label></div></div></div>');
 
-        storeall.push(new Storage);
-        new StorageView({model : storeall.at(allrow-1)});
+        storeall.push(new Storage());
+        new StorageView({el : '#urlinputmodel', model : storeall.at(allrow-1)});
         $('#urlinput'+allrow).urlscrape(allrow);
         $('#nameinput'+allrow).namescrape(allrow);
 
