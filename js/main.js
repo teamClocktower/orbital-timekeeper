@@ -1,18 +1,11 @@
 'use strict';
-var allrow = 1;
-var path = 'http://api.nusmods.com/';
-var store1 = new Storage();
-var sview = new StorageView({el : '#urlinput1', model : store1});
 
-var nview = new Name({el:'#nameinput1', model:store1});
-var uview = new Url({el:'#fortesting', model:store1});
-
-var storeall = new StoreAll;
-storeall.add(store1);
 
 
 (function($){
     $.fn.urlscrape = function(row){
+
+        /*
         $('#urlinput'+row).bind("change", function(){
            var strmdl = storeall.at(row-1);
            var url = $(this).val().split('/');
@@ -78,7 +71,7 @@ storeall.add(store1);
 
         });
 
-
+    */
     } ;
 
     $.fn.namescrape = function(row){
@@ -90,8 +83,29 @@ storeall.add(store1);
 
 
 })(jQuery);
-
+var allrow, path, store1, sview, nview, uview, storeall;
 $(function() {
+
+
+
+
+    allrow = 1;
+    path = 'http://api.nusmods.com/';
+    store1 = new Storage();
+    sview = new StorageView({el : '#urlinput1', model : store1});
+
+    nview = new Name({el:'#nameinput1', model:store1});
+    uview = new Url({el:'#urlinput1', model:store1});
+
+    storeall = new StoreAll;
+    storeall.add(store1);
+
+
+
+
+
+
+
     $('#urlinput'+allrow).urlscrape(allrow);
     $('#nameinput'+allrow).namescrape(allrow);
     // addrow button
