@@ -5,85 +5,14 @@
 (function($){
     $.fn.urlscrape = function(row){
 
-        /*
-        $('#urlinput'+row).bind("change", function(){
-           var strmdl = storeall.at(row-1);
-           var url = $(this).val().split('/');
-            var year = url[4];
-            var last = url.pop().split('?');
-
-            strmdl.set('sem', last[0][3]);
-            var sem = strmdl.get('sem');
-            var slots = last[1].split('&');
-            if (strmdl.get('modules')==undefined){
-                strmdl.set('modules', new Modules);
-            }
-            var modules = strmdl.get('modules');
-            // ACC1002X[LEC]=X2
-            _.forEach(slots, function(slot){
-
-                var modid = slot.split('[')[0];
-                var classtype = slot.slice(slot.indexOf('[')+1, slot.indexOf(']')).toLowerCase();
-                var session = slot.split('=').pop();
-                if (modules.get(modid)==undefined){
-                    modules.add(new Module({id:modid}));
-                }
-                var module = modules.get(modid);
-                var lessons = module.get('lessons');
-                // check if lesson in lessons
-                var lesson = _.findWhere(lessons,{classNo:session, lessonType:classtype});
-                if (lesson == undefined){
-                    lessons.add(new Lesson({classNo:session, lessonType:classtype}));
-
-                }
-
-            });
-
-            _.forEach(slots, function(slot){
-                var modid = slot.split('[')[0];
-                $.getJSON(path + year + '/' + sem + '/modules/' + modid + '/timetable.json', function(json){
-                   //json = json.responseJSON; // might add/remove, not sure format of json response
-                   var lessons = modules.get(modid).get('lessons') ;
-
-                    for (var i=0; i < lessons.length; i++){
-
-                        _.forEach(json, function(response){
-
-                           // inefficiencies, doesnt break during forEach
-                            if (lessons.at(i).get('classNo') == response.ClassNo && lessons.at(i).get('lessonType') == response.LessonType.toLowerCase().slice(0,3)){
-
-                                lessons.at(i).set('weekText', response.WeekText);
-                                lessons.at(i).set('dayText', response.DayText);
-                                lessons.at(i).set('startTime', new Time({hr:response.StartTime.slice(2),min:response.StartTime.slice(2,4)}));
-                                lessons.at(i).set('endTime', new Time({hr:response.EndTime.slice(2),min:response.EndTime.slice(2,4)}));
-                                lessons.at(i).set('venue', response.Venue);
-
-
-                            }
-
-                        });
-                    }
-                });
-
-
-
-            });
-
-        });
-
-    */
     } ;
 
-    $.fn.namescrape = function(row){
-        $('#nameinput'+row).bind("change", function(){
-          storeall.at(row-1).set('name', $(this).val() );
-        });
-    };
+
 
 
 
 })(jQuery);
-var allrow, path, store1, sview, nview, uview, storeall;
+var allrow, path, store1, sview, nview, uview, storeall, tview;
 $(function() {
 
 
@@ -99,6 +28,7 @@ $(function() {
 
     storeall = new StoreAll;
     storeall.add(store1);
+    tview = new Timetable({model:store1, el:'#timetable'});
 
 
 
@@ -106,8 +36,7 @@ $(function() {
 
 
 
-    $('#urlinput'+allrow).urlscrape(allrow);
-    $('#nameinput'+allrow).namescrape(allrow);
+
     // addrow button
     $('#addrow').click(function(){
         allrow += 1;

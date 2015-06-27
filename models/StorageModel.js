@@ -4,12 +4,17 @@ var Storage = Backbone.Model.extend({
     url : "/models/StorageModel",
     initialize : function(){
         this.set('modules', new Modules());
-        this.on('change:raw', this.processRaw);
+        this.on('change:rawUrl', this.processRawUrl);
+        this.on('change:rawName', this.processRawName);
 
     },
-    // http://nusmods.com/timetable/2014-2015/sem2?ACC1002X[TUT]=X18&ACC1002X[LEC]=X1&ACC3601[SEC]=A2&CS1010E[SEC]=1&CS1010E[LAB]=9&CS1010E[TUT]=U01&ACC4611[SEC]=K1
-    processRaw : function(){
-        var raw = this.get('raw');
+    processRawName : function(){
+     var raw = this.get('rawName');
+        this.set('name', raw);
+    },
+
+    processRawUrl : function(){
+        var raw = this.get('rawUrl');
         var rawSlash = raw.split('/');
         var year = rawSlash[rawSlash.length-2];
         this.set('year', year);
@@ -52,17 +57,18 @@ var Storage = Backbone.Model.extend({
 
                             lessons.at(i).set('weekText', json.WeekText);
                             lessons.at(i).set('dayText', json.DayText);
-                            lessons.at(i).set('startTime', new Time({hr:json.StartTime.slice(2),min:json.StartTime.slice(2,4)}));
-                            lessons.at(i).set('endTime', new Time({hr:json.EndTime.slice(2),min:json.EndTime.slice(2,4)}));
+                            lessons.at(i).set('startTime' , new Time({hr:json.StartTime.slice(0,2),min:json.StartTime.slice(2,4)}));
+                            lessons.at(i).set({endTime : new Time({hr:json.EndTime.slice(0,2),min:json.EndTime.slice(2,4)})});
                             lessons.at(i).set('venue', json.Venue);
+
 
 
                         }
 
                     });
 
-                    console.log(lessons.at(i));
-                    console.log(lessons.at(i).get('venue'));
+                    //console.log(lessons.at(i));
+                    //console.log(lessons.at(i).get('venue'));
                 }
 
 
@@ -71,6 +77,8 @@ var Storage = Backbone.Model.extend({
 
 
         }, this);
+
+        this.trigger("updateComplete");
 
     }
 

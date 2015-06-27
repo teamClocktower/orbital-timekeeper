@@ -9,10 +9,7 @@ var Url = Backbone.View.extend({
       'change': 'pushRaw'
     },
     pushRaw: function() {
-        this.model.set('raw', this.el.value);
-    },
-    render : function(){
-        console.log(this);
+        this.model.set('rawUrl', this.el.value);
     }
 
 

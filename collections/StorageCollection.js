@@ -2,6 +2,7 @@
 
 var StoreAll = Backbone.Collection.extend({
 
-    url : "/models/StorageModel"
+    url : "/models/StorageModel",
+
 
 });
