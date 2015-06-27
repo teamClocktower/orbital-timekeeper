@@ -7,6 +7,12 @@ var Url = Backbone.View.extend({
     initialize: function(){
         this.listenTo(this.el, 'all', this.recordChange);
     },
+    events: {
+      'click': 'showAlert'
+    },
+    showAlert: function() {
+      alert("You clicked me");
+    },
     render : function(){
         console.log(this);
     },
