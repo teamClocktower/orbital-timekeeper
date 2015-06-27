@@ -4,23 +4,16 @@ var Url = Backbone.View.extend({
     model: Storage,
     tagname : "div",
 
-    initialize: function(){
-        this.listenTo(this.el, 'all', this.recordChange);
-    },
+
     events: {
-      'click': 'showAlert'
+      'change': 'pushRaw'
     },
-    showAlert: function() {
-      alert("You clicked me");
+    pushRaw: function() {
+        this.model.set('raw', this.el.value);
     },
     render : function(){
         console.log(this);
-    },
-    recordChange : function(){
-        console.log(this);
-
     }
-
 
 
 });
