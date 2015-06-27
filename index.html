@@ -12,12 +12,12 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
    <!--  initial Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="js/lib/materialize.js"></script>
   <script src="js/lib/moment.js"></script>
   <script src="js/lib/underscore-min.js"></script>
   <script src="js/lib/backbone-min.js"></script>
-    <script src="js/lib/backform.js"></script>
+
 
   <script src="js/lib/init.js"></script>
     <script src="models/ModuleModel.js"></script>
@@ -33,6 +33,10 @@
     <script src="views/StorageView.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bacbone.js"></script>
+
+    <script src="views/UrlView.js"></script>
+
+
 
 </head>
 <body>
@@ -62,7 +66,7 @@
 
       <div class="input-field col m6">
         <i class="small mdi-editor-format-underline prefix"></i>
-          <input id="urlinput1" class="urlinput" type="text" class="validate">
+          <input id="urlinput1" type="text" class="validate">
           <label for="urlinput1"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Input NUSmods timetable URL">Timetable URL</a></label>
 
        
@@ -157,7 +161,7 @@
         </thead>
 
         <tbody style="font-size:small;">
-          <tr id='mon'>
+          <tr id='Monday'>
               <td style="font-size:medium;">Monday</td>
               <td class='h08 m00'></td>
               <td class='h08 m30'></td>
@@ -194,7 +198,7 @@
               <td class='h24 m00'></td>
               
           </tr>
-          <tr id='tue'>
+          <tr id='Tuesday'>
             <td style="font-size:medium;">Tuesday</td>
               <td class='h08 m00'></td>
               <td class='h08 m30'></td>
@@ -230,7 +234,7 @@
               <td class='h23 m30'></td>
               <td class='h24 m00'></td>
           </tr>
-          <tr id='wed'>
+          <tr id='Wednesday'>
             <td style="font-size:medium;">Wednesday</td>
               <td class='h08 m00'></td>
               <td class='h08 m30'></td>
@@ -266,7 +270,7 @@
               <td class='h23 m30'></td>
               <td class='h24 m00'></td>
           </tr>
-          <tr id='thu'>
+          <tr id='Thursday'>
             <td style="font-size:medium;">Thursday</td>
               <td class='h08 m00'></td>
               <td class='h08 m30'></td>
@@ -302,7 +306,7 @@
               <td class='h23 m30'></td>
               <td class='h24 m00'></td>
           </tr>
-          <tr id='fri'>
+          <tr id='Friday'>
             <td style="font-size:medium;">Friday</td>
               <td class='h08 m00'></td>
               <td class='h08 m30'></td>
@@ -390,6 +394,7 @@
       Designed with <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
+      <script src="js/main.js"></script>
   </footer>
 
 
