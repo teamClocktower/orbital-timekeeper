@@ -44,8 +44,9 @@ var Storage = Backbone.Model.extend({
 
                 for (var i=0; i < lessons.length; i++){
 
-                    _.forEach(json, function(){
-
+                    _.forEach(json, function(json){
+                        //console.log("JSON");
+                        //console.log(json.LessonType);
                         // inefficiencies, doesnt break during forEach
                         if (lessons.at(i).get('classNo') == json.ClassNo && lessons.at(i).get('lessonType') == json.LessonType.toLowerCase().slice(0,3)){
 
@@ -61,6 +62,7 @@ var Storage = Backbone.Model.extend({
                     });
 
                     console.log(lessons.at(i));
+                    console.log(lessons.at(i).get('venue'));
                 }
 
 
