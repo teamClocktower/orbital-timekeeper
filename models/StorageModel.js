@@ -11,7 +11,7 @@ var Storage = Backbone.Model.extend({
     processRaw : function(){
         var raw = this.get('raw');
         var rawSlash = raw.split('/');
-        var year = rawSlash[4];
+        var year = rawSlash[rawSlash.length-2];
         this.set('year', year);
         var info = rawSlash.pop().split('?');
         this.set('sem', info[0][3]);
