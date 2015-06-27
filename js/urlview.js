@@ -48,7 +48,10 @@ var Lesson = Backbone.Model.extend({
  		var numberofmodules; var noofmodules;
  		for(var i=0; i<numberoflessons; i++){
  			var loopstore=lessonstore[i].split("%");
- 			var this["lesson"+i+loopstore[0]] = new Lesson;//loopstore[0]=modCode
+      testvalue=[];
+ 			testvalue[i] = new Lesson;
+      testvalue[i].Lesson = "lesson"+i;
+      //loopstore[0]=modCode
       for(var j=0; j<=numberofmodules.length;j++){
         for(var k=0; k<j;k++){
           if(numberofmodules[k]==loopstore[1]){
@@ -62,35 +65,38 @@ var Lesson = Backbone.Model.extend({
  			//to prevent different lessons of the
  			//same mod from having the same name
  			//pushing parameters into created lesson instances 
- 			"lesson"+i+loopstore[0].set({lessonType: "loopstore[1]", classNO: "loopstore[2]"})
+ 			("lesson"+i).set({lessonType: "loopstore[1]", classNO: "loopstore[2]"})
  			
       $.getJSON('http://api.nusmods.com/'+year+sem+'/modules/'+loopstore[0]+'.json', function(json){
       modapi= json;
       for(var x=0;x<modapi.Timetable.length;x++){
         var modschedule = modapi.Timetable[k];
         if(modschedule.LessonType==lessontype && modschedule.ClassNo==ClassNO){
-          (lesson+i).set{weekText: modschedule.WeekText;dayText:modschedule.DayText;
-            startTime:modschedule.StartTime;endTime:modschedule.EndTime;
-    venue:'';}
+          ("lesson"+i).set({
+            weekText:modschedule.WeekText,
+            dayText:modschedule.DayText,
+            startTime:modschedule.StartTime,
+            endTime:modschedule.EndTime,
+            venue:' '})}
         }
       }
       //store unique mods in array numberofmodules
- 			do{
- 				if(numberofmodules.length>0){
- 					for(var j=0;j<numberofmodules.length;j++){
- 						if(numberofmodules[j]!=loopstore[0]){
- 							numberofmodules.push("loopstore[0]");
- 						}
- 					}
- 				}
- 					else{
- 					numberofmodules.push("loopstore[0]");
-				}
-				counter++;
- 				}while(counter<numberoflessons);
- 			}
+ 			// do{
+ 			// 	if(numberofmodules.length>0){
+ 			// 		for(var j=0;j<numberofmodules.length;j++){
+ 			// 			if(numberofmodules[j]!=loopstore[0]){
+ 			// 				numberofmodules.push("loopstore[0]");
+ 			// 			}
+ 			// 		}
+ 			// 	};
+ 			// 		else{
+ 			// 		numberofmodules.push("loopstore[0]");
+				// };
+				// counter++;
+ 			// 	}while(counter<numberoflessons);
+ 			 )
  			}
 
- 		}
- 	}
+ 		}//line30
+ 	}//line 23
  })
