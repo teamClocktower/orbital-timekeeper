@@ -23,7 +23,10 @@ var Storage = Backbone.Model.extend({
         var sem = this.get('sem');
         var sessions = info[1].split('&');
 
-
+        // for looped async json loading
+        $.ajaxSetup({
+            async: false
+        });
 
 
         _.forEach(sessions, function(session){
@@ -54,15 +57,19 @@ var Storage = Backbone.Model.extend({
                         //console.log(json.LessonType);
                         // inefficiencies, doesnt break during forEach
                         if (lessons.at(i).get('classNo') == json.ClassNo && lessons.at(i).get('lessonType') == json.LessonType.toLowerCase().slice(0,3)){
+                            var lesson = lessons.at(i);
+                            if (!lesson.has('weekText')){
+                                lesson.set('weekText', json.WeekText);
+                                lesson.set('dayText', json.DayText);
 
-                            lessons.at(i).set('weekText', json.WeekText);
-                            lessons.at(i).set('dayText', json.DayText);
-                            lessons.at(i).set('startTime' , new Time({hr:json.StartTime.slice(0,2),min:json.StartTime.slice(2,4)}));
-                            lessons.at(i).set({endTime : new Time({hr:json.EndTime.slice(0,2),min:json.EndTime.slice(2,4)})});
-                            lessons.at(i).set('venue', json.Venue);
+                                lesson.get('timing').add(new Time({type:"start", hr:json.StartTime.slice(0,2),min:json.StartTime.slice(2,4)}));
+                                lesson.get('timing').add(new Time({type:"end", hr:json.EndTime.slice(0,2),min:json.EndTime.slice(2,4)}));
+                                lesson.set('venue', json.Venue);
 
+                            }
 
-
+                            console.log(lesson.get('timing'));
+                            console.log("loaded lesson");
                         }
 
                     });
@@ -72,13 +79,16 @@ var Storage = Backbone.Model.extend({
                 }
 
 
+
+
              });
+
 
 
 
         }, this);
 
-        this.trigger("updateComplete");
+       this.trigger("updateComplete");
 
     }
 

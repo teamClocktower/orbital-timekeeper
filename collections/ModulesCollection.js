@@ -2,7 +2,7 @@
 
 var Modules = Backbone.Collection.extend({
 
-    url : "/models/ModuleModel",
+    url : "/models/ModuleModel"
 
 
 
