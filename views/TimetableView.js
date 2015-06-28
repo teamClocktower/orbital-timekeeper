@@ -75,6 +75,7 @@ var Timetable = Backbone.View.extend({
                     }
 
                     selectEl(day,hr,min).html(fillText(datum.length, datum));
+                    selectEl(day,hr,min).css("border","1px solid black");
 
                 };
 
