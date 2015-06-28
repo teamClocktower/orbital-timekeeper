@@ -11,6 +11,7 @@ var Storage = Backbone.Model.extend({
     processRawName: function () {
         var raw = this.get('rawName');
         this.set('name', raw);
+        this.trigger("updateName");
     },
 
     processRawUrl: function () {

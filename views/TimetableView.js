@@ -7,6 +7,7 @@ var Timetable = Backbone.View.extend({
 
     initialize : function(){
         this.listenTo(this.model, "updateComplete", this.displayLessons);
+        this.listenTo(this.model, "updateName", this.displayLessons);
     },
     displayLessons: function() {
 
@@ -69,8 +70,10 @@ var Timetable = Backbone.View.extend({
                     initEl(day,hr,min);
 
                     var datum = selectEl(day,hr,min).data("num");
+                    if (datum.indexOf(idx) == -1){
+                        datum.push(idx);
+                    }
 
-                    datum.push(idx);
                     selectEl(day,hr,min).html(fillText(datum.length, datum));
 
                 };
