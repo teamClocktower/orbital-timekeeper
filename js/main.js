@@ -12,9 +12,11 @@
 
 
 })(jQuery);
-var allrow, path, store1, nview, uview, storeall, tview,testing;
+var allrow, path, store1, nview, uview, storeall, tview;
 $(function() {
-
+    // clear cached input
+    $('#urlinput1').val("");
+    $('#nameinput1').val("");
 
 
 
