@@ -10,6 +10,7 @@
   <!-- CSS  -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
    <!--  initial Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -67,7 +68,7 @@
 
       <div class="input-field col m6">
         <i class="small mdi-editor-format-underline prefix"></i>
-          <input id="urlinput1" type="text" class="validate">
+          <input id="urlinput1" type="text" class="validate" placeholder="http://nusmods.com/timetable/2014-2015/sem2?ACC1002X[TUT]=X18&ACC1002X[LEC]=X1&ACC3601[SEC]=A2&CS1010E[SEC]=1&CS1010E[LAB]=9&CS1010E[TUT]=U01&ACC4611[SEC]=K1">
           <label for="urlinput1"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Input NUSmods timetable URL">Timetable URL</a></label>
 
 
@@ -97,6 +98,7 @@
         <div class="col m4">
           <a class="btn-floating btn-medium waves-effect waves-light red"><i id='addrow' class="mdi-content-add"></i></a>
           <a class="btn-floating btn-medium waves-effect waves-light grey"><i id='removerow' class="mdi-action-highlight-remove"></i></a>
+            <a id='helpbtn' class="waves-effect waves-light teal lighten-2 btn" onclick="Materialize.toast('Input the URL to your NUSMods Timetable to begin!',3000)"><i class="material-icons left">live_help</i>Help!</a>
 
         </div>
 
