@@ -1,9 +1,8 @@
 'use strict'
 var Time = Backbone.Model.extend({
 
+    url : "/models/TimeMode",
 
-    url: function() {
-        return this.id ? '/TimeModel/' + this.id : '/TimeModel' ;
-    }
+
 
 });
