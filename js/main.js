@@ -12,7 +12,7 @@
 
 
 })(jQuery);
-var allrow, path, store1, sview, nview, uview, storeall, tview;
+var allrow, path, store1, nview, uview, storeall, tview,testing;
 $(function() {
 
 
@@ -20,8 +20,8 @@ $(function() {
 
     allrow = 1;
     path = 'http://api.nusmods.com/';
-    store1 = new Storage();
-    sview = new StorageView({el : '#urlinput1', model : store1});
+    store1 = new Storage({idx:allrow, name:""});
+
 
     nview = new Name({el:'#nameinput1', model:store1});
     uview = new Url({el:'#urlinput1', model:store1});
@@ -39,6 +39,7 @@ $(function() {
 
     // addrow button
     $('#addrow').click(function(){
+        console.log('clicked');
         allrow += 1;
 
         $('#rowcontainer').append(
@@ -51,10 +52,11 @@ $(function() {
             +'Hidden<input type="checkbox" onclick="Materialize.toast("Hidden/Visible toggled", 1000, "rounded")"><span class="lever"></span>'
             +'Visible</label></div></div></div>');
 
-        storeall.push(new Storage());
-        new StorageView({el : '#urlinputmodel', model : storeall.at(allrow-1)});
-        $('#urlinput'+allrow).urlscrape(allrow);
-        $('#nameinput'+allrow).namescrape(allrow);
+        var store = new Storage({idx:allrow, name:""});
+        var nameView = new Name({el:'#nameinput'+allrow, model: store});
+        var urlView = new Url({el:'#urlinput'+allrow, model: store});
+        storeall.add(store);
+        var timetableView = new Timetable({model:store, el:"#timetable"});
 
 
 
