@@ -17,6 +17,7 @@ Contents of this README:
 3. Libraries/Frameworks
 4. Features
 5. User stories
+6. Set up for local development
 
 ****
 
@@ -85,17 +86,14 @@ NUSMods API consolidates and normalizes various bits of NUS module information.
 |-----|-----|-----|
 |As a student, I would like to easily find free time with my friends. | Comparing of timetables |Y|
 |As a meeting coordinator, I want to easily find free timeslots between lessons for my friends and me so that I will not have to spend a lot of time on scheduling the meet up.| Adding/removing users | Y |
-|As a project leader, I may not have lessons at certain timeslots but I want to mark them as not free as I need to eat!|Mark a time slot as ìnot freeî manually| N |
-|My class has been cancelled. I want my friends to know I am now free to meet at that time.|Mark a time slot as ìfreeî manually|N|
+|As a project leader, I may not have lessons at certain timeslots but I want to mark them as not free as I need to eat!|Mark a time slot as ‚Äúnot free‚Äù manually| N |
+|My class has been cancelled. I want my friends to know I am now free to meet at that time.|Mark a time slot as ‚Äúfree‚Äù manually|N|
 |Even though everything is automated for me, I still have a preference to when the meeting should be held, so that it is convenient for everyone.|Rank free time slots according to preferences| N |
 |I want to be able to easily share the timeslots with everyone|User login connected to social media to enable easy sharing| N |
 
+****
 
-
-
-
-
-## Set up for local development
+##6. Set up for local development
 
 * Install nodejs
 * `npm install express`
