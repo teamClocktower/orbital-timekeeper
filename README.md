@@ -1,7 +1,9 @@
 #Readme v2.0 (milestone 2)
 ****
 
-![](https://raw.githubusercontent.com/teamClocktower/orbital-timekeeper/master/img/tklogo.png)
+![http://128.199.205.168:8080/nicholas/preview/](https://raw.githubusercontent.com/teamClocktower/orbital-timekeeper/master/img/tklogo.png)
+
+[![Milestone 2 Video](https://raw.githubusercontent.com/teamClocktower/orbital-timekeeper/master/img/vid_thumb.png)](https://youtu.be/XGYgx5ZoI6k "Milestone 2 Video")
 
 #Timekeeper - Comparing timetables made easy
 Take a look at [our preview site](http://128.199.205.168:8080/nicholas/preview/)
@@ -17,6 +19,8 @@ Contents of this README:
 3. Libraries/Frameworks
 4. Features
 5. User stories
+6. Milestone 2 specific 
+7. Set up for local development
 
 ****
 
@@ -90,9 +94,15 @@ NUSMods API consolidates and normalizes various bits of NUS module information.
 |Even though everything is automated for me, I still have a preference to when the meeting should be held, so that it is convenient for everyone.|Rank free time slots according to preferences| N |
 |I want to be able to easily share the timeslots with everyone|User login connected to social media to enable easy sharing| N |
 
+####Comparing of timetables
+Users can view their timetables by pasting their NUSMods timetable URL into the URL input bar
 
+####Adding users 
+Users can compare more timetables by clicking on the add button to add more input bars for more URLs
 
-
+####*For easy testing, here are some sample URLs that can be used*
+`http://staging.nusmods.com/timetable/2015-2016/sem1?ACC3601[SEC]=A1&ACC3603[SEC]=C1&ACC3614[SEC]=G2`
+`http://nusmods.com/timetable/2014-2015/sem2?ACC1002X[TUT]=X18&ACC1002X[LEC]=X1&ACC3601[SEC]=A2&CS1010E[SEC]=1&CS1010E[TUT]=D19&CS1010E[LAB]=4&ACC4611[SEC]=K1&MA1506[LAB]=CL5&MA1506[LEC]=SL1&MA1506[TUT]=T07`
 
 
 ## Set up for local development
