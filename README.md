@@ -6,6 +6,8 @@
 #Timekeeper - Comparing timetables made easy
 Take a look at [our preview site](http://128.199.205.168:8080/nicholas/preview/)
 
+You can also check out [our video on Youtube](https://www.youtube.com/watch?v=XGYgx5ZoI6k)
+
 This project is part of NUS's orbital programme 2015.
 
 This project helps NUS students find free time with their friends. Be it project meetings, or even a simple catchup - Timekeeper is here for you!
