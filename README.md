@@ -109,6 +109,9 @@ Users can compare more timetables by clicking on the add button to add more inpu
 `http://staging.nusmods.com/timetable/2015-2016/sem1?ACC3601[SEC]=A1&ACC3603[SEC]=C1&ACC3614[SEC]=G2`
 `http://nusmods.com/timetable/2014-2015/sem2?ACC1002X[TUT]=X18&ACC1002X[LEC]=X1&ACC3601[SEC]=A2&CS1010E[SEC]=1&CS1010E[TUT]=D19&CS1010E[LAB]=4&ACC4611[SEC]=K1&MA1506[LAB]=CL5&MA1506[LEC]=SL1&MA1506[TUT]=T07`
 
+#### [Project Log](https://docs.google.com/spreadsheets/d/1WNq7jCVte8VXnXkvCqN3Hv8FyunXUWw-zR4hS96vfB0/edit?usp=sharing)
+
+
 
 ##7. Set up for local development
 ****
