@@ -8,6 +8,8 @@
 #Timekeeper - Comparing timetables made easy
 Take a look at [our preview site](http://128.199.205.168:8080/nicholas/preview/)
 
+You can also check out [our video on YouTube](https://www.youtube.com/watch?v=XGYgx5ZoI6k)
+
 This project is part of NUS's orbital programme 2015.
 
 This project helps NUS students find free time with their friends. Be it project meetings, or even a simple catchup - Timekeeper is here for you!
@@ -89,10 +91,13 @@ NUSMods API consolidates and normalizes various bits of NUS module information.
 |-----|-----|-----|
 |As a student, I would like to easily find free time with my friends. | Comparing of timetables |Y|
 |As a meeting coordinator, I want to easily find free timeslots between lessons for my friends and me so that I will not have to spend a lot of time on scheduling the meet up.| Adding/removing users | Y |
-|As a project leader, I may not have lessons at certain timeslots but I want to mark them as not free as I need to eat!|Mark a time slot as “not free” manually| N |
-|My class has been cancelled. I want my friends to know I am now free to meet at that time.|Mark a time slot as “free” manually|N|
+|As a project leader, I may not have lessons at certain timeslots but I want to mark them as not free as I need to eat!|Mark a time slot as â€œnot freeâ€? manually| N |
+|My class has been cancelled. I want my friends to know I am now free to meet at that time.|Mark a time slot as â€œfreeâ€? manually|N|
 |Even though everything is automated for me, I still have a preference to when the meeting should be held, so that it is convenient for everyone.|Rank free time slots according to preferences| N |
 |I want to be able to easily share the timeslots with everyone|User login connected to social media to enable easy sharing| N |
+
+##6. Milestone 2 Specific
+****
 
 ####Comparing of timetables
 Users can view their timetables by pasting their NUSMods timetable URL into the URL input bar
@@ -105,7 +110,8 @@ Users can compare more timetables by clicking on the add button to add more inpu
 `http://nusmods.com/timetable/2014-2015/sem2?ACC1002X[TUT]=X18&ACC1002X[LEC]=X1&ACC3601[SEC]=A2&CS1010E[SEC]=1&CS1010E[TUT]=D19&CS1010E[LAB]=4&ACC4611[SEC]=K1&MA1506[LAB]=CL5&MA1506[LEC]=SL1&MA1506[TUT]=T07`
 
 
-## Set up for local development
+##7. Set up for local development
+****
 
 * Install nodejs
 * `npm install express`
