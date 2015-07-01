@@ -64,7 +64,7 @@ var Storage = Backbone.Model.extend({
                                 lesson.set('dayText', json.DayText);
 
                                 lesson.get('timing').add(new Time({
-                                    type: "start",
+                                     type: "start",
                                     hr: json.StartTime.slice(0, 2),
                                     min: json.StartTime.slice(2, 4)
                                 }));
