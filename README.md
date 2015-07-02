@@ -1,12 +1,12 @@
 #Readme v2.0 (milestone 2)
 ****
 
-![http://128.199.205.168:8080/nicholas/preview/](https://raw.githubusercontent.com/teamClocktower/orbital-timekeeper/master/img/tklogo.png)
+![http://128.199.205.168/nicholas/preview/](https://raw.githubusercontent.com/teamClocktower/orbital-timekeeper/master/img/tklogo.png)
 
 [![Milestone 2 Video](https://raw.githubusercontent.com/teamClocktower/orbital-timekeeper/master/img/vid_thumb.png)](https://youtu.be/XGYgx5ZoI6k "Milestone 2 Video")
 
 #Timekeeper - Comparing timetables made easy
-Take a look at [our preview site](http://128.199.205.168:8080/nicholas/preview/)
+Take a look at [our preview site](http://128.199.205.168/nicholas/preview/)
 
 You can also check out [our video on YouTube](https://www.youtube.com/watch?v=XGYgx5ZoI6k)
 
