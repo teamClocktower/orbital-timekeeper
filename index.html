@@ -33,6 +33,7 @@
     <script src="views/StorageView.js"></script>
     <script src="js/main.js"></script>
     <script src="js/urlview.js"></script>
+    <script src="js/hideshow.js"></script>
 
     <script src="views/UrlView.js"></script>
 
@@ -78,7 +79,7 @@
         <div id='switch1' class="switch">
           <label>
             Hidden
-            <input type="checkbox" onclick="Materialize.toast('Hidden/Visible toggled', 1000, 'rounded')">
+            <input type="checkbox" id="hsbutton" name="hsbutton" onclick="hideShow()"/>
               <span class="lever"></span>
                 Visible
             </label>
