@@ -115,7 +115,7 @@ $(function(){
           +'<i class="small mdi-editor-format-underline prefix"></i><input id="urlinput'+numrow+'" type="text" class="validate">'
           +'<label for="urlinput'+numrow+'"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Input NUSmods timetable URL">Timetable URL</a></label>'
           +'</div><div class="col m3"><br><div id="switch'+numrow+'" class="switch"><label>'
-          +'Hidden<input type="checkbox" onclick="Materialize.toast("Hidden/Visible toggled", 1000, "rounded")"><span class="lever"></span>'
+          +'Hidden<input type="checkbox" name="hsbutton" onclick="hideShowNote('+numrow+'"><span class="lever"></span>'
           +'Visible</label></div></div></div>');
 
 		$('#urlinput'+numrow).rowcheck(numrow);

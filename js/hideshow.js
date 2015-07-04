@@ -1,11 +1,14 @@
 "use strict";
-function hideShow(){
-    var togState = document.getElementById('hsbutton');
-    if (togState.checked==1){
-        Materialize.toast('Visible', 300, 'rounded');
+function hideShowNote(i){
+    var togState = document.getElementsByName('hsbutton');
+    var tSPos = i-1;
+    //alert(tSPos);
+    if (togState[tSPos].checked==1){
+        Materialize.toast('Visible row ' + i, 300, 'rounded');
     }
-    if (togState.checked==0){
-        Materialize.toast('Hidden', 300, 'rounded');
+    if (togState[tSPos].checked==0){
+        Materialize.toast('Hidden row '+ i, 300, 'rounded');
+
     }
 
 }
