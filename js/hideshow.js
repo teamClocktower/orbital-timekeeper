@@ -1,14 +1,17 @@
 "use strict";
 function hideShow(){
-    alert("its working");
     var togState = document.getElementById('hsbutton');
-    if (togState.checked){
-        alert("Visible");
+    if (togState.checked==1){
+        Materialize.toast('Visible', 300, 'rounded');
     }
+    if (togState.checked==0){
+        Materialize.toast('Hidden', 300, 'rounded');
+    }
+
 }
 
 
-}
+
 //var hideshow;
 //hideshow = Backbone.View.extend({
 //

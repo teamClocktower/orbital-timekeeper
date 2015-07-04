@@ -3,403 +3,406 @@
 <head>
 
 
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Timekeeper</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Timekeeper</title>
 
-  <!-- CSS  -->
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- CSS  -->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-   <!--  initial Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="js/lib/materialize.js"></script>
-  <script src="js/lib/moment.js"></script>
-  <script src="js/lib/underscore-min.js"></script>
-  <script src="js/lib/backbone-min.js"></script>
+    <!--  initial Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/lib/materialize.js"></script>
+
+    <script src="js/lib/underscore-min.js"></script>
+    <script src="js/lib/backbone-min.js"></script>
 
 
-  <script src="js/lib/init.js"></script>
+    <script src="js/lib/init.js"></script>
     <script src="models/ModuleModel.js"></script>
     <script src="models/TimeModel.js"></script>
-
+    <script src="collections/TimeCollection.js"></script>
     <script src="models/LessonModel.js"></script>
-    <script src="models/UserModel.js"></script>
+
     <script src="models/StorageModel.js"></script>
     <script src="collections/StorageCollection.js"></script>
     <script src="collections/ModulesCollection.js"></script>
     <script src="collections/LessonsCollection.js"></script>
     <script src="collections/UsersCollection.js"></script>
-    <script src="views/StorageView.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/urlview.js"></script>
-    <script src="js/hideshow.js"></script>
 
+
+
+    <script src="views/NameView.js"></script>
     <script src="views/UrlView.js"></script>
+    <script src="views/TimetableView.js"></script>
+    <script src="js/hideshow.js"></script>
 
 
 
 </head>
 <body>
-  <nav class="orange accent-3" role="navigation">
-    <div class="nav-wrapper container left"><a id="logo-container" href="#" class="brand-logo ">Logo</a>
+<nav class="indigo darken-1" role="navigation">
+    <div class="nav-wrapper container left">TimeKeeper<a style="height:100%;" id="logo-container" href="#" class="brand-logo"><img class="responsive-img" src="img/tklogo.png" style="height:100%;"></img> </a>
     </div>
 
-  </nav>
+</nav>
 
-  <div class="section">
-  </div>
+<div class="section">
+</div>
 
 
-  <div id='rowcontainer' class="container">
+<div id='rowcontainer' class="container">
 
-  <!-- top url/other stuff -->
-  <!-- add extra rows of input in same row div -->
+    <!-- top url/other stuff -->
+    <!-- add extra rows of input in same row div -->
     <div id='row1' class="row">
-      <div class="input-field col m3">
-        <i class="small mdi-action-account-circle prefix"></i>
-          <input id="nameinput1" type="text" class="validate">
-          <label for="nameinput1"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Enter name">Name</a></label>
+        <div class="input-field col m3">
+            <i class="small mdi-action-account-circle prefix"></i>
+            <input id="nameinput1" type="text" class="validate">
+            <label for="nameinput1"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Enter name">Name</a></label>
 
 
-
-      </div>
-
-      <div class="input-field col m6">
-        <i class="small mdi-editor-format-underline prefix"></i>
-          <input id="urlinput1" type="text" class="validate">
-          <label for="urlinput1"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Input NUSmods timetable URL">Timetable URL</a></label>
-
-
-
-      </div>
-
-      <div class="col m3">
-        <br>
-        <div id='switch1' class="switch">
-          <label>
-            Hidden
-            <input type="checkbox" id="hsbutton" name="hsbutton" onclick="hideShow()"/>
-              <span class="lever"></span>
-                Visible
-            </label>
-        </div>
-
-      </div>
-
-
-
-  </div></div>
-
-
-    <!-- add button -->
-    <div class ="row">
-        <div class="col m4">
-          <a class="btn-floating btn-medium waves-effect waves-light red"><i id='addrow' class="mdi-content-add"></i></a>
-          <a class="btn-floating btn-medium waves-effect waves-light grey"><i id='removerow' class="mdi-action-highlight-remove"></i></a>
-          <a id='refresh' class="waves-effect waves-light btn indigo darken-1"><i  class="mdi-navigation-refresh left"></i>Refresh timetable</a>
-        </div>
-
-        <div class="col m6">
 
         </div>
 
-        <div class="col m2">
+        <div class="input-field col m6">
+            <i class="small mdi-editor-format-underline prefix"></i>
+            <input id="urlinput1" type="text" class="validate" placeholder="http://nusmods.com/timetable/2014-2015/sem2?ACC1002X[TUT]=X18&ACC1002X[LEC]=X1&ACC3601[SEC]=A2&CS1010E[SEC]=1&CS1010E[LAB]=9&CS1010E[TUT]=U01&ACC4611[SEC]=K1">
+            <label for="urlinput1"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Input NUSmods timetable URL">Timetable URL</a></label>
+
+
+
         </div>
+
+        <div class="col m3">
+            <br>
+            <div id='switch1' class="switch">
+                <label>
+                    Hidden
+                    <input type="checkbox" id="hsbutton" name="hsbutton" onclick="hideShow()"/>
+                    <span class="lever"></span>
+                    Visible
+                </label>
+            </div>
+
+        </div>
+
+
+
+    </div></div>
+
+<br>
+<!-- add button -->
+<div class ="row">
+    <div class="col m4">
+        <a class="btn-floating btn-medium waves-effect waves-light red"><i id='addrow' class="mdi-content-add"></i></a>
+        <a class="btn-floating btn-medium waves-effect waves-light grey"><i id='removerow' class="mdi-action-highlight-remove"></i></a>
+        <a id='helpbtn' class="waves-effect waves-light teal lighten-2 btn" onclick="Materialize.toast('Input your NUSMods Timetable URL to begin!',3000, 'rounded')"><i class="material-icons left">live_help</i>Help!</a>
 
     </div>
 
+    <div class="col m6">
 
-
-
-  <!-- main content -->
-
-     <div class="row">
-
-
-      <div class="col m12">
-
-
-
-      <table id='timetable'class="striped">
-        <thead style="font-size:x-small;">
-          <tr >
-              <th></th>
-              <th>0800</th>
-              <th>0830</th>
-              <th>0900</th>
-              <th>0930</th>
-              <th>1000</th>
-              <th>1030</th>
-              <th>1100</th>
-              <th>1130</th>
-              <th>1200</th>
-              <th>1230</th>
-              <th>1300</th>
-              <th>1330</th>
-              <th>1400</th>
-              <th>1430</th>
-              <th>1500</th>
-              <th>1530</th>
-              <th>1600</th>
-              <th>1630</th>
-              <th>1700</th>
-              <th>1730</th>
-              <th>1800</th>
-              <th>1830</th>
-              <th>1900</th>
-              <th>1930</th>
-              <th>2000</th>
-              <th>2030</th>
-              <th>2100</th>
-              <th>2130</th>
-              <th>2200</th>
-              <th>2230</th>
-              <th>2300</th>
-              <th>2330</th>
-              <th>0000</th>
-          </tr>
-        </thead>
-
-        <tbody style="font-size:small;">
-          <tr id='Monday'>
-              <td style="font-size:medium;">Monday</td>
-              <td class='h08 m00'></td>
-              <td class='h08 m30'></td>
-              <td class='h09 m00'></td>
-              <td class='h09 m30'></td>
-              <td class='h10 m00'></td>
-              <td class='h10 m30'></td>
-              <td class='h11 m00'></td>
-              <td class='h11 m30'></td>
-              <td class='h12 m00'></td>
-              <td class='h12 m30'></td>
-              <td class='h13 m00'></td>
-              <td class='h13 m30'></td>
-              <td class='h14 m00'></td>
-              <td class='h14 m30'></td>
-              <td class='h15 m00'></td>
-              <td class='h15 m30'></td>
-              <td class='h16 m00'></td>
-              <td class='h16 m30'></td>
-              <td class='h17 m00'></td>
-              <td class='h17 m30'></td>
-              <td class='h18 m00'></td>
-              <td class='h18 m30'></td>
-              <td class='h19 m00'></td>
-              <td class='h19 m30'></td>
-              <td class='h20 m00'></td>
-              <td class='h20 m30'></td>
-              <td class='h21 m00'></td>
-              <td class='h21 m30'></td>
-              <td class='h22 m00'></td>
-              <td class='h22 m30'></td>
-              <td class='h23 m00'></td>
-              <td class='h23 m30'></td>
-              <td class='h24 m00'></td>
-
-          </tr>
-          <tr id='Tuesday'>
-            <td style="font-size:medium;">Tuesday</td>
-              <td class='h08 m00'></td>
-              <td class='h08 m30'></td>
-              <td class='h09 m00'></td>
-              <td class='h09 m30'></td>
-              <td class='h10 m00'></td>
-              <td class='h10 m30'></td>
-              <td class='h11 m00'></td>
-              <td class='h11 m30'></td>
-              <td class='h12 m00'></td>
-              <td class='h12 m30'></td>
-              <td class='h13 m00'></td>
-              <td class='h13 m30'></td>
-              <td class='h14 m00'></td>
-              <td class='h14 m30'></td>
-              <td class='h15 m00'></td>
-              <td class='h15 m30'></td>
-              <td class='h16 m00'></td>
-              <td class='h16 m30'></td>
-              <td class='h17 m00'></td>
-              <td class='h17 m30'></td>
-              <td class='h18 m00'></td>
-              <td class='h18 m30'></td>
-              <td class='h19 m00'></td>
-              <td class='h19 m30'></td>
-              <td class='h20 m00'></td>
-              <td class='h20 m30'></td>
-              <td class='h21 m00'></td>
-              <td class='h21 m30'></td>
-              <td class='h22 m00'></td>
-              <td class='h22 m30'></td>
-              <td class='h23 m00'></td>
-              <td class='h23 m30'></td>
-              <td class='h24 m00'></td>
-          </tr>
-          <tr id='Wednesday'>
-            <td style="font-size:medium;">Wednesday</td>
-              <td class='h08 m00'></td>
-              <td class='h08 m30'></td>
-              <td class='h09 m00'></td>
-              <td class='h09 m30'></td>
-              <td class='h10 m00'></td>
-              <td class='h10 m30'></td>
-              <td class='h11 m00'></td>
-              <td class='h11 m30'></td>
-              <td class='h12 m00'></td>
-              <td class='h12 m30'></td>
-              <td class='h13 m00'></td>
-              <td class='h13 m30'></td>
-              <td class='h14 m00'></td>
-              <td class='h14 m30'></td>
-              <td class='h15 m00'></td>
-              <td class='h15 m30'></td>
-              <td class='h16 m00'></td>
-              <td class='h16 m30'></td>
-              <td class='h17 m00'></td>
-              <td class='h17 m30'></td>
-              <td class='h18 m00'></td>
-              <td class='h18 m30'></td>
-              <td class='h19 m00'></td>
-              <td class='h19 m30'></td>
-              <td class='h20 m00'></td>
-              <td class='h20 m30'></td>
-              <td class='h21 m00'></td>
-              <td class='h21 m30'></td>
-              <td class='h22 m00'></td>
-              <td class='h22 m30'></td>
-              <td class='h23 m00'></td>
-              <td class='h23 m30'></td>
-              <td class='h24 m00'></td>
-          </tr>
-          <tr id='Thursday'>
-            <td style="font-size:medium;">Thursday</td>
-              <td class='h08 m00'></td>
-              <td class='h08 m30'></td>
-              <td class='h09 m00'></td>
-              <td class='h09 m30'></td>
-              <td class='h10 m00'></td>
-              <td class='h10 m30'></td>
-              <td class='h11 m00'></td>
-              <td class='h11 m30'></td>
-              <td class='h12 m00'></td>
-              <td class='h12 m30'></td>
-              <td class='h13 m00'></td>
-              <td class='h13 m30'></td>
-              <td class='h14 m00'></td>
-              <td class='h14 m30'></td>
-              <td class='h15 m00'></td>
-              <td class='h15 m30'></td>
-              <td class='h16 m00'></td>
-              <td class='h16 m30'></td>
-              <td class='h17 m00'></td>
-              <td class='h17 m30'></td>
-              <td class='h18 m00'></td>
-              <td class='h18 m30'></td>
-              <td class='h19 m00'></td>
-              <td class='h19 m30'></td>
-              <td class='h20 m00'></td>
-              <td class='h20 m30'></td>
-              <td class='h21 m00'></td>
-              <td class='h21 m30'></td>
-              <td class='h22 m00'></td>
-              <td class='h22 m30'></td>
-              <td class='h23 m00'></td>
-              <td class='h23 m30'></td>
-              <td class='h24 m00'></td>
-          </tr>
-          <tr id='Friday'>
-            <td style="font-size:medium;">Friday</td>
-              <td class='h08 m00'></td>
-              <td class='h08 m30'></td>
-              <td class='h09 m00'></td>
-              <td class='h09 m30'></td>
-              <td class='h10 m00'></td>
-              <td class='h10 m30'></td>
-              <td class='h11 m00'></td>
-              <td class='h11 m30'></td>
-              <td class='h12 m00'></td>
-              <td class='h12 m30'></td>
-              <td class='h13 m00'></td>
-              <td class='h13 m30'></td>
-              <td class='h14 m00'></td>
-              <td class='h14 m30'></td>
-              <td class='h15 m00'></td>
-              <td class='h15 m30'></td>
-              <td class='h16 m00'></td>
-              <td class='h16 m30'></td>
-              <td class='h17 m00'></td>
-              <td class='h17 m30'></td>
-              <td class='h18 m00'></td>
-              <td class='h18 m30'></td>
-              <td class='h19 m00'></td>
-              <td class='h19 m30'></td>
-              <td class='h20 m00'></td>
-              <td class='h20 m30'></td>
-              <td class='h21 m00'></td>
-              <td class='h21 m30'></td>
-              <td class='h22 m00'></td>
-              <td class='h22 m30'></td>
-              <td class='h23 m00'></td>
-              <td class='h23 m30'></td>
-              <td class='h24 m00'></td>
-          </tr>
-        </tbody>
-      </table>
-
-
-
-
-
-
-
-
-
-      </div>
     </div>
 
+    <div class="col m2">
+    </div>
+
+</div>
+
+
+<br>
+
+<!-- main content -->
+
+<div class="row">
+
+
+    <div class="col m12">
+
+
+
+        <table id='timetable'class="striped">
+            <thead style="font-size:small;">
+            <tr >
+                <th></th>
+                <th>0800</th>
+                <th></th>
+                <th>0900</th>
+                <th></th>
+                <th>1000</th>
+                <th></th>
+                <th>1100</th>
+                <th></th>
+                <th>1200</th>
+                <th></th>
+                <th>1300</th>
+                <th></th>
+                <th>1400</th>
+                <th></th>
+                <th>1500</th>
+                <th></th>
+                <th>1600</th>
+                <th></th>
+                <th>1700</th>
+                <th></th>
+                <th>1800</th>
+                <th></th>
+                <th>1900</th>
+                <th></th>
+                <th>2000</th>
+                <th></th>
+                <th>2100</th>
+                <th></th>
+                <th>2200</th>
+                <th></th>
+                <th>2300</th>
+                <th></th>
+                <th>0000</th>
+            </tr>
+            </thead>
+
+            <tbody style="font-size:small;">
+            <tr id='Monday'>
+                <td style="font-size:medium;padding-right:0">Monday</td>
+                <td class='h08 m00'></td>
+                <td class='h08 m30'></td>
+                <td class='h09 m00'></td>
+                <td class='h09 m30'></td>
+                <td class='h10 m00'></td>
+                <td class='h10 m30'></td>
+                <td class='h11 m00'></td>
+                <td class='h11 m30'></td>
+                <td class='h12 m00'></td>
+                <td class='h12 m30'></td>
+                <td class='h13 m00'></td>
+                <td class='h13 m30'></td>
+                <td class='h14 m00'></td>
+                <td class='h14 m30'></td>
+                <td class='h15 m00'></td>
+                <td class='h15 m30'></td>
+                <td class='h16 m00'></td>
+                <td class='h16 m30'></td>
+                <td class='h17 m00'></td>
+                <td class='h17 m30'></td>
+                <td class='h18 m00'></td>
+                <td class='h18 m30'></td>
+                <td class='h19 m00'></td>
+                <td class='h19 m30'></td>
+                <td class='h20 m00'></td>
+                <td class='h20 m30'></td>
+                <td class='h21 m00'></td>
+                <td class='h21 m30'></td>
+                <td class='h22 m00'></td>
+                <td class='h22 m30'></td>
+                <td class='h23 m00'></td>
+                <td class='h23 m30'></td>
+                <td class='h24 m00'></td>
+
+            </tr>
+            <tr id='Tuesday'>
+                <td style="font-size:medium;padding-right:0">Tuesday</td>
+                <td class='h08 m00'></td>
+                <td class='h08 m30'></td>
+                <td class='h09 m00'></td>
+                <td class='h09 m30'></td>
+                <td class='h10 m00'></td>
+                <td class='h10 m30'></td>
+                <td class='h11 m00'></td>
+                <td class='h11 m30'></td>
+                <td class='h12 m00'></td>
+                <td class='h12 m30'></td>
+                <td class='h13 m00'></td>
+                <td class='h13 m30'></td>
+                <td class='h14 m00'></td>
+                <td class='h14 m30'></td>
+                <td class='h15 m00'></td>
+                <td class='h15 m30'></td>
+                <td class='h16 m00'></td>
+                <td class='h16 m30'></td>
+                <td class='h17 m00'></td>
+                <td class='h17 m30'></td>
+                <td class='h18 m00'></td>
+                <td class='h18 m30'></td>
+                <td class='h19 m00'></td>
+                <td class='h19 m30'></td>
+                <td class='h20 m00'></td>
+                <td class='h20 m30'></td>
+                <td class='h21 m00'></td>
+                <td class='h21 m30'></td>
+                <td class='h22 m00'></td>
+                <td class='h22 m30'></td>
+                <td class='h23 m00'></td>
+                <td class='h23 m30'></td>
+                <td class='h24 m00'></td>
+            </tr>
+            <tr id='Wednesday'>
+                <td style="font-size:medium;padding-right:0">Wednesday</td>
+                <td class='h08 m00'></td>
+                <td class='h08 m30'></td>
+                <td class='h09 m00'></td>
+                <td class='h09 m30'></td>
+                <td class='h10 m00'></td>
+                <td class='h10 m30'></td>
+                <td class='h11 m00'></td>
+                <td class='h11 m30'></td>
+                <td class='h12 m00'></td>
+                <td class='h12 m30'></td>
+                <td class='h13 m00'></td>
+                <td class='h13 m30'></td>
+                <td class='h14 m00'></td>
+                <td class='h14 m30'></td>
+                <td class='h15 m00'></td>
+                <td class='h15 m30'></td>
+                <td class='h16 m00'></td>
+                <td class='h16 m30'></td>
+                <td class='h17 m00'></td>
+                <td class='h17 m30'></td>
+                <td class='h18 m00'></td>
+                <td class='h18 m30'></td>
+                <td class='h19 m00'></td>
+                <td class='h19 m30'></td>
+                <td class='h20 m00'></td>
+                <td class='h20 m30'></td>
+                <td class='h21 m00'></td>
+                <td class='h21 m30'></td>
+                <td class='h22 m00'></td>
+                <td class='h22 m30'></td>
+                <td class='h23 m00'></td>
+                <td class='h23 m30'></td>
+                <td class='h24 m00'></td>
+            </tr>
+            <tr id='Thursday'>
+                <td style="font-size:medium;padding-right:0">Thursday</td>
+                <td class='h08 m00'></td>
+                <td class='h08 m30'></td>
+                <td class='h09 m00'></td>
+                <td class='h09 m30'></td>
+                <td class='h10 m00'></td>
+                <td class='h10 m30'></td>
+                <td class='h11 m00'></td>
+                <td class='h11 m30'></td>
+                <td class='h12 m00'></td>
+                <td class='h12 m30'></td>
+                <td class='h13 m00'></td>
+                <td class='h13 m30'></td>
+                <td class='h14 m00'></td>
+                <td class='h14 m30'></td>
+                <td class='h15 m00'></td>
+                <td class='h15 m30'></td>
+                <td class='h16 m00'></td>
+                <td class='h16 m30'></td>
+                <td class='h17 m00'></td>
+                <td class='h17 m30'></td>
+                <td class='h18 m00'></td>
+                <td class='h18 m30'></td>
+                <td class='h19 m00'></td>
+                <td class='h19 m30'></td>
+                <td class='h20 m00'></td>
+                <td class='h20 m30'></td>
+                <td class='h21 m00'></td>
+                <td class='h21 m30'></td>
+                <td class='h22 m00'></td>
+                <td class='h22 m30'></td>
+                <td class='h23 m00'></td>
+                <td class='h23 m30'></td>
+                <td class='h24 m00'></td>
+            </tr>
+            <tr id='Friday'>
+                <td style="font-size:medium;padding-right:0">Friday</td>
+                <td class='h08 m00'></td>
+                <td class='h08 m30'></td>
+                <td class='h09 m00'></td>
+                <td class='h09 m30'></td>
+                <td class='h10 m00'></td>
+                <td class='h10 m30'></td>
+                <td class='h11 m00'></td>
+                <td class='h11 m30'></td>
+                <td class='h12 m00'></td>
+                <td class='h12 m30'></td>
+                <td class='h13 m00'></td>
+                <td class='h13 m30'></td>
+                <td class='h14 m00'></td>
+                <td class='h14 m30'></td>
+                <td class='h15 m00'></td>
+                <td class='h15 m30'></td>
+                <td class='h16 m00'></td>
+                <td class='h16 m30'></td>
+                <td class='h17 m00'></td>
+                <td class='h17 m30'></td>
+                <td class='h18 m00'></td>
+                <td class='h18 m30'></td>
+                <td class='h19 m00'></td>
+                <td class='h19 m30'></td>
+                <td class='h20 m00'></td>
+                <td class='h20 m30'></td>
+                <td class='h21 m00'></td>
+                <td class='h21 m30'></td>
+                <td class='h22 m00'></td>
+                <td class='h22 m30'></td>
+                <td class='h23 m00'></td>
+                <td class='h23 m30'></td>
+                <td class='h24 m00'></td>
+            </tr>
+            </tbody>
+        </table>
 
 
 
 
-  <footer class="page-footer orange accent-3">
+
+
+
+
+
+    </div>
+</div>
+<br><br><br><br>
+
+
+
+
+<footer class="page-footer orange accent-3">
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Team ClockTower</h5>
-          <p class="grey-text text-lighten-4">NUS Orbital 2015</p>
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Team ClockTower</h5>
+                <p class="grey-text text-lighten-4">NUS Orbital 2015</p>
 
 
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Github</h5>
+                <ul>
+                    <li><a class="blue-grey-text" href="https://github.com/teamClocktower/orbital-timekeeper">Our repo</a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Preview Site</h5>
+                <ul>
+                    <li><a class="blue-grey-text" href="http://128.199.205.168:8080/nicholas/preview/">Beta Site</a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                    <li><a class="white-text" href="#!"></a></li>
+                </ul>
+            </div>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
     <div class="footer-copyright">
-      <div class="container">
-      Designed with <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
+        <div class="container">
+            Designed with <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        </div>
     </div>
-      <script src="js/main.js"></script>
-  </footer>
+    <script src="js/main.js"></script>
+</footer>
 
 
 
 
-  </body>
+</body>
 </html>
