@@ -9,7 +9,8 @@ var Url = Backbone.View.extend({
       'change': 'pushRaw'
     },
     pushRaw: function() {
-        this.model.set('rawUrl', this.el.value);
+        var decoded = decodeURIComponent(this.el.value);
+        this.model.set('rawUrl', decoded);
     }
 
 
