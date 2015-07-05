@@ -1,21 +1,16 @@
 'use strict';
-var Timetable = Backbone.View.extend({
+var R_Timetable = Backbone.View.extend({
 
 
     tagname : "div",
 
 
     initialize : function(){
-        this.listenTo(this.model, "updateComplete", this.displayLessons);
-        this.listenTo(this.model, "updateName", this.displayLessons);
-    },
-    displayLessons: function() {
-        console.log("into tview");
-        // reset async
-        $.ajaxSetup({
-            async: true
-        });
+        this.listenTo(this.model, "RemoveEls", this.removeLessons);
 
+    },
+    removeLessons: function() {
+        console.log("into rview");
 
         // go through storage to display all lessons
         var modules = this.model.get('modules');
@@ -23,7 +18,6 @@ var Timetable = Backbone.View.extend({
         var hrcycle = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11","12","13","14","15","16","17","18","19","20","21","22","23"];
 
         var idx = this.model.get('idx');
-
         _.forEach(modules.models, function(module){
 
             var lessons = module.get('lessons');
@@ -48,10 +42,8 @@ var Timetable = Backbone.View.extend({
                 var hrtrack = parseInt(startHr);
 
                 var fillText = function(len, idxArr){
-                  var head = len==1?len + " Class, <br>": len + " Classes, <br>";
-                    if (len == 0){
-                        head = "";
-                    }
+                    var head = len==1?len + " Class, <br>": len + " Classes, <br>";
+
                     var body = "";
 
                     _.forEach(idxArr, function(fidx){
@@ -62,6 +54,8 @@ var Timetable = Backbone.View.extend({
                     return head + body;
                 };
 
+
+                console.log("before removing data");
                 var selectEl = function(day, hr, min){
                   return   $('#'+day+ ' > .h'+hr+'.m'+min);
                 };
@@ -72,14 +66,14 @@ var Timetable = Backbone.View.extend({
                 };
                 var fillEl = function(day, hr, min, idx){
                     initEl(day,hr,min);
+
                     var datum = selectEl(day,hr,min).data("num");
 
-                    if (datum.indexOf(idx) == -1){
-                        datum.push(idx);
-                    }
+                    datum.splice(datum.indexOf(idx),1);
 
-                    selectEl(day,hr,min).html(fillText(datum.length, datum));
-                    selectEl(day,hr,min).css("border","1px solid black");
+                    selectEl(day,hr,min).html("");
+                    selectEl(day,hr,min).css("border","none");
+
 
                 };
 
@@ -106,7 +100,8 @@ var Timetable = Backbone.View.extend({
 
             },this);
         },this);
-        console.log("out of tview");
+
+        console.log("out of rview");
     }
 
 
