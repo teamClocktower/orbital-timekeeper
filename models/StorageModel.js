@@ -22,6 +22,7 @@ var Storage = Backbone.Model.extend({
         var last = rawSlash.pop();
         var sem = last[3];
         var info = last.split('?');
+        var idx = this.get('idx');
 
 
         var sessions = info[1].split('&');
@@ -83,37 +84,59 @@ var Storage = Backbone.Model.extend({
         // end load function
         load(c_storage, sessions);
 
-        this.set('year', year);
-        this.set('sem', info[0][3]);
-        this.set('modules', c_storage.get('modules'));
 
-        /*
+        //this.set('year', year);
+        //this.set('sem', info[0][3]);
+        //this.set('modules', c_storage.get('modules'));
+        var r_storage = new Storage();
+        var r_modules = r_storage.get('modules');
         // asumming no change to year/sem data
         this.set('year', year);
         this.set('sem', info[0][3]);
         // iterating through storage first to delete removed
         var c_modules = c_storage.get('modules');
-        _.forEach(this.get('modules'), function(module){
+
+        _.forEach(this.get('modules').models, function(module){
+
             // remove if it does not exist in c_storage
             if (c_modules.get(module.get('id')) == undefined){
-                this.remove(module).destroy(); // check if this works
+                r_modules.add(module);
+
+                //this.remove(module).destroy(); // check if this works
                 return;
             }
-            var c_lessons = c_modules.get('lessons');
+            var c_lessons = c_modules.get(module.get('id')).get('lessons');
+
+           // var r_lessons = r_modules.get(module.get('id')).get('lessons');
             // continue iterating down the hierarchy if it exists
+
             _.forEach(module.get('lessons').models, function(lesson){
+
                 var check = _.findWhere(c_lessons, {classNo : lesson.get('classNo'), lessonType : lesson.get('lessonType')});
                 // remove if undefined
                 if (check == undefined){
-                    this.remove(lesson).destroy();
+                    if (r_modules.get(this.get('id'))== undefined){
+                        r_modules.add(new Module({id:this.get('id')}));
+                    }
+
+                    var r_lessons = r_modules.get(this.get('id')).get('lessons');
+
+                    r_lessons.add(lesson);
+
+                    //this.get('lessons').remove(lesson).destroy();
                     return;
                 }
 
 
-            }, this);
+            }, this.get(module.get('id')));
 
-        }, this );
-        */
+        }, this.get('modules') );
+        console.log(r_modules);
+        rstore.set('idx', idx);
+        rstore.set('modules', r_modules);
+
+        this.set('modules', c_storage.get('modules'));
+
 
 
 

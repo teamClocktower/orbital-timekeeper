@@ -12,7 +12,7 @@
 
 
 })(jQuery);
-var allrow, path, store1, nview, uview, storeall, tview;
+var allrow, path, store1, nview, uview, storeall, tview, rstore, rview;
 $(function() {
     // clear cached input
     $('#urlinput1').val("");
@@ -23,7 +23,7 @@ $(function() {
     allrow = 1;
     path = 'http://api.nusmods.com/';
     store1 = new Storage({idx:allrow, name:""});
-
+    rstore = new R_Storage();
 
     nview = new Name({el:'#nameinput1', model:store1});
     uview = new Url({el:'#urlinput1', model:store1});
@@ -32,6 +32,7 @@ $(function() {
     storeall.add(store1);
     tview = new Timetable({model:store1, el:'#timetable'});
 
+    rview = new R_Timetable({model:rstore, el:'#timetable'});
 
 
 
