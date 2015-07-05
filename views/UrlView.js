@@ -6,7 +6,9 @@ var Url = Backbone.View.extend({
 
 
     events: {
-      'change': 'pushRaw'
+      'change' : 'pushRaw',
+        'keyup' : 'pushRaw'
+
     },
     pushRaw: function() {
         var decoded = decodeURIComponent(this.el.value);

@@ -6,7 +6,8 @@ var Name = Backbone.View.extend({
 
 
     events: {
-        'change': 'pushRaw'
+        'change': 'pushRaw',
+        'keyup': 'pushRaw'
     },
     pushRaw: function() {
         this.model.set('rawName', this.el.value);
