@@ -17,7 +17,7 @@ var Storage = Backbone.Model.extend({
     processRawUrl: function () {
         var c_storage = new Storage();
         var raw = this.get('rawUrl');
-      
+
         var rawSlash = raw.split('/');
         var year = rawSlash[rawSlash.length - 2];
         var last = rawSlash.pop();
