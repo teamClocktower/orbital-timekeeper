@@ -11,8 +11,20 @@ var Url = Backbone.View.extend({
 
     },
     pushRaw: function() {
-        var decoded = decodeURIComponent(this.el.value);
-        this.model.set('rawUrl', decoded);
+        var model = this.model;
+        var decoded;
+        if(this.el.value.length == 21){
+            $.getJSON('https://nusmods.com/redirect.php?timetable=' + this.el.value , function(json){
+                decoded = decodeURIComponent(json.redirectedUrl);
+
+                model.set('rawUrl', decoded);
+            });
+        } else{
+            decoded = decodeURIComponent(this.el.value);
+            model.set('rawUrl', decoded);
+        }
+
+
     }
 
 
